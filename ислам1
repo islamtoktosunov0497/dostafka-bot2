@@ -1,0 +1,36 @@
+Sen dunyodagi eng tajribali Node.js, React va PostgreSQL dasturchisisan. Men kod yozishni umuman bilmayman, shuning uchun menga Telegram Mini App ichida ishlaydigan Pizza yetkazib berish loyihamizning oxirgi, eng mukammal versiyasini noldan yozib ber. Menga kod qanday ishlashini tushuntirib o'tirma.
+
+**Eng asosiy qoidalar:**
+
+1. Biz endi haqiqiy ma'lumotlar bazasi (PostgreSQL) ishlatamiz. Bazani boshqarish uchun eng oson ORM (masalan, Prisma) dan foydalan.
+2. Dizayn o'ta sodda, toza va minimalist bo'lishi shart. Ortiqcha chiziqlar, to'q ranglarsiz, faqat oq fon va chiroyli interfeys yarating.
+
+**Quyidagi barcha funksiyalarni to'liq bajarib ber:**
+
+**1. Baza (Database) va Loyiha sozlamalari:**
+
+- Baza uchun 3 ta jadval (jadval) yarat:
+    - `User` (Mijozning Telegram ID'si, ismi, telefoni).
+    - `Product` (Pizzaning rasmi, nomi, ta'rifi, narxi).
+    - `Order` (Kim buyurtma qildi, nimalar oldi, jami summa, lokatsiya va sana).
+- Dastur ishga tushganda baza bo'sh qolmasligi uchun 4 ta pizzani (Margarita, Peperoni, Qazi pizza, Pishloqli) avtomatik bazaga yozib qo'yadigan skript qo'sh. Kod ichida hech qanday vaqtinchalik ma'lumot (array) qolmasin, hamma narsa bazadan olinsin!
+
+**2. Mini App Interfeysidagi YANGI funksiyalar (React):**
+
+- Mini App ochilganda, eng pastda (Bottom Navigation) ikkita menyu bo'lsin: '🍕 Bosh sahifa' va '📜 Mening buyurtmalarim'.
+- 'Bosh sahifa'da bazadan kelgan pizzalar ro'yxati va ularni savatga qo'shish funksiyasi bo'lsin.
+- **Yangi funksiya:** '📜 Mening buyurtmalarim' sahifasiga o'tganda, mijoz o'zining oldingi qilgan xaridlarini ko'ra olsin. Har bir eski buyurtmaning tagida bitta 'Yana shundan buyurtma qilish' degan tugma bo'lsin.
+- Bu tugma bosilsa, eski buyurtmadagi pizzalar avtomatik ravishda savatga tushsin va mijozni tasdiqlash sahifasiga olib o'tsin.
+
+**3. Savat va Rasmiylashtirish (Mini App ichida):**
+
+- Savatda pizzalar ro'yxati, jami summa ko'rinsin.
+- 'Buyurtmani tasdiqlash' tugmasi bosilganda, mijozning ismi, raqami va manzili yig'ilib, bazadagi `Order` jadvaliga saqlansin.
+- Tasdiqlangach, Mini App yopilib, ma'lumotlar botga (Node.js backend'ga) yuborilsin.
+
+**4. Botning javobi va Adminga xabar:**
+
+- Bot ma'lumotni qabul qilib, bazaga saqlagach, `.env` dagi `ADMIN_ID` ga buyurtma chekini (Mijoz ismi, telefoni, nima olgani, jami summa) yuborsin.
+- Mijozning o'ziga botda: 'Buyurtmangiz muvaffaqiyatli qabul qilindi va bazamizga saqlandi! Kuryerimiz tez orada bog'lanadi' deb xabar bersin.
+
+Iltimos, Bot qismi va Mini App qismini alohida papkalarda tayyorla. Eng oxirida menga terminalda bazani qanday ishga tushirish (migration komandalari) va loyihani qanday yurgizish kerakligini bitta qilib, juda tushunarli tilda aytib ber

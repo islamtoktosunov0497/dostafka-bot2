@@ -1,0 +1,27 @@
+project_root/
+├── src/
+│   ├── app/                       # Next.js App Router
+│   │   ├── layout.tsx             # Asosiy karkas va shriftlar
+│   │   └── page.tsx               # Bosh sahifa (Pizzalar ro'yxati)
+│   ├── components/
+│   │   ├── ui/                    # Tugma, Input, Modal kabi kichik qismlar
+│   │   ├── features/              # ProductCard, CartList kabi murakkab qismlar
+│   │   └── layout/                # Header, BottomNavigation
+│   ├── hooks/
+│   │   ├── useTelegram.ts         # window.Telegram.WebApp obyekti uchun hook
+│   │   └── useCart.ts             # Savat logikasini boshqarish
+│   ├── lib/
+│   │   ├── api.ts                 # Backend (Bot) ga so'rov yuborish
+│   │   └── utils.ts               # Yordamchi funksiyalar (masalan, pulni formatlash)
+│   ├── providers/
+│   │   └── TelegramProvider.tsx   # Mini App yuklanganini tekshiruvchi provayder
+│   ├── store/
+│   │   └── cartStore.ts           # Zustand (Savatdagi ma'lumotlarni saqlash)
+│   └── styles/
+│       └── globals.css            # Asosiy stillar
+├── public/
+│   └── images/                    # Statik rasmlar
+├── .env.local
+├── next.config.mjs
+├── package.json
+└── tsconfig.json
